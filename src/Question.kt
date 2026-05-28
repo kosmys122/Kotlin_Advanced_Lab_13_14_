@@ -34,6 +34,27 @@ interface ProgressPrintable{
 }
 
 class Quiz:ProgressPrintable{
+
+    fun printQuiz() {
+        question1.let {
+            println((it.questionText))
+            println(it.answer)
+            println(it.difficultly)
+        }
+        println()
+        question2.let {
+            println((it.questionText))
+            println(it.answer)
+            println(it.difficultly)
+        }
+        println()
+        question3.let {
+            println((it.questionText))
+            println(it.answer)
+            println(it.difficultly)
+        }
+        println()
+    }
     override fun printProgressBar() {
         repeat(Quiz.answered){ println(" ") }
         repeat(Quiz.total-Quiz.answered){ println(" ") }
@@ -64,5 +85,5 @@ class Quiz:ProgressPrintable{
 }
 
 fun main(){
-    Quiz().printProgressBar()
+    val quiz=Quiz().apply { printQuiz() }
 }
